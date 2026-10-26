@@ -1,0 +1,32 @@
+name: "Heather"
+run-name: "BARLEY"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+concurrency:
+  group: "THUNDER"
+  cancel-in-progress: true
+jobs:
+  Glade:
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.coral.outputs.page_url }}
+    steps:
+      - name: "Sapphire"
+        uses: actions/checkout@v7
+      - name: "NECTAR"
+        uses: actions/configure-pages@v5
+      - name: "saffronfield"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "phlox"
+        id: coral
+        uses: actions/deploy-pages@v4
